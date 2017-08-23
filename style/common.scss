@@ -1,4 +1,242 @@
-$background:#cecece;
+
+ /* 初始化CSS */
+        html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img, figure, figcaption { margin:0; padding:0; }
+        fieldset, img, input{ border:none; }
+        img{display: block;}
+        address, caption, cite, code, dfn, th, var { font-style:normal; font-weight:normal; }
+        ul, ol { list-style:none; }
+        input { padding-top:0; padding-bottom:0; font-family: "SimSun","宋体";box-sizing:border-box;}
+        input::-moz-focus-inner { border:none; padding:0; }
+        select, input { vertical-align:middle; }
+        select, input, textarea { font-size:12px; margin:0; }
+        input[type="text"], input[type="password"], textarea { outline-style:none; -webkit-appearance:none; }
+        table { border-collapse:collapse; }
+        body { color:#333;font:14px "Microsoft YaHei","微软雅黑",helvetica,arial,verdana,tahoma,sans-serif,HELVETICA; background:#fff;/* overflow-y:scroll;*/ }
+        a { color:#666; text-decoration:none; }
+ /* 初始化CSS */
+//float
+.flt{
+    float:left;
+}
+.frt{
+    float:right;
+}
+.clear:after{
+    content:'.';
+    display:block;
+    height:0;
+    line-height:0;
+    clear:both;
+    overflow:hidden;
+    visibility:hidden;
+}
+
+
+$bodyBackground:#F0F0F0;
+html{
+    height:100%;
+}
 body{
-    background:$background;
+    height:100%;
+    background:$bodyBackground;
+}
+header,.banner,section,.info,.bottom-links,footer{
+    width:1152px;
+    margin:0 auto;
+}
+.bottom{
+    width:100%;
+}
+header{
+    position:relative;
+    height:70px;
+    #header-logo{
+        position:absolute;
+        bottom:14px;
+        left:0;
+    }
+    .header-links{
+        color:#898989;
+        margin-right:170px;
+        margin-top:22px;
+       
+        line-height:32px;
+        
+        #search-btn{
+            height:32px;
+            width:20px;
+            outline:none;
+            height:22px;
+            vertical-align:middle;
+        }
+        a{
+            display:inline-block;
+            height:32px;
+            padding:0 4px;
+            color:#898989;
+            font-size:12px;
+            vertical-align:middle;
+            line-height:32px;
+            font-family:"Microsoft YaHei","微软雅黑",helvetica,arial,verdana,tahoma,sans-serif;
+        }
+        #cart{
+            width:30px;
+            background:red url() no-repeat;
+            height:32px;
+        }
+    }
+    .header-tel{
+        position:absolute;
+        right:0;
+        top:0;
+        width:170px;
+        height:100%;
+        background:url(../../res/img/tel-call.png) no-repeat;
+        background-position-y:30px;
+    }
+}
+.banner{
+    height:400px;
+    background:#fff;
+    img{
+        width:1152px;
+        height:400px;
+    }
+}
+section{
+    margin-top:20px;
+    min-height:500px;
+    .beauty-tit{
+        width:380px;
+        height:227px;
+        background:url(../../res/img/section-beauty-tit.jpg) no-repeat center center;
+        cursor:pointer;
+    }
+}
+.exhibition{
+        margin-left:6px;
+        figure{
+            width:380px;
+            height:227px;
+            cursor:pointer;
+            position:relative;
+            &:hover>figcaption{
+                background:#eeafce;
+            }
+            &:hover .trigon{
+                border-right-color:#eeafce;
+            }
+            &:hover .left .trigon{
+                border-left-color:#eeafce;
+            }
+            &:hover p{
+                color:#fff;
+            }
+            &:hover img{
+                transform:translateX(5px);
+            }
+            &:hover .right{
+                transform:translateX(-5px);
+            }
+            img{
+                
+                width:190px;
+                height:227px;
+                transition:0.5s all;
+            }
+            
+            figcaption{
+                
+                background:#fff;
+                width:160px;
+                height:187px;
+                padding:20px 15px;
+                position:relative;
+                h3{
+                    font-size:12px;
+                    height:60px;
+                    line-height:22px;
+                }
+                p{
+                    font-size:12px;
+                    color:#969696;
+                    line-height:18px;
+                }
+                span{
+                    position:absolute;
+                    left:15px;
+                    bottom:20px;
+                    font-size:16px;
+                    font-weight:bold;
+                    color:#d10048;
+                }
+                .trigon{
+                    position:absolute;
+                    left:-28px;
+                    top:30%;
+                    border:14px solid transparent;
+                    border-right-color:#fff;
+                }
+            }
+            .left{
+                .trigon{
+                    border-right-color:transparent;
+                    border-left-color:#fff;
+                    left:190px;
+                }
+            }
+        }
+    }
+.info{
+    min-height:200px;
+    .info-box{
+        figure{
+            &:hover>figcaption{
+                background:#fff;
+            }
+            &:hover .trigon{
+                border-color:transparent;
+                border-right-color:#fff;
+            }
+            &:hover .left .trigon{
+                border-color:transparent;
+                border-left-color:#fff;
+            }
+            &:hover p{
+                color:#666;
+            }
+            width:570px;
+            img{
+            width:342px;
+            height:227px;
+            }
+            .right{
+                width:342px;
+                height:227px;
+            }
+            figcaption{
+                width:198px;
+                h3{
+                    color:#888;
+                }
+                .trigon{
+                    
+                }
+                span{
+                    font-size:12px;
+                    font-weight:normal;
+                }
+            }
+            .left{
+                width:198px;
+                .trigon{
+                    left:228px;
+                }
+            }
+        }
+    }
+}
+.bottom{
+    border-top:2px solid #a5a5a5;
+    height:390px;
 }
