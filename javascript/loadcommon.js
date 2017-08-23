@@ -13,7 +13,9 @@ $(document).ready(function(){
 	});
 	function insertHTML(){
 		return function(data){
-			console.log(data);
+			console.log($(data).children('.bottom'));
+			$(data).find('header').prependTo($('body'));
+			$(data).find('.bottom').append($('body'));
 		}
 	}
 });

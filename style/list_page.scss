@@ -1,0 +1,135 @@
+
+header,.footer,.banner,section{
+    width:1002px;
+    margin:0 auto;
+}
+.banner{
+    height:400px;
+    background:url(../../res/list_page/list_page_banner.jpg) no-repeat center center;
+    background-size:cover;
+    .about{
+        width:202px;
+        height:340px;
+        background:rgba(0,0,0,.5);
+        color:#fff;
+        padding:30px;
+        h3{
+            font-size:16px;
+            line-height:30px;
+        }
+        p{
+            font-size:14px;
+            line-height:24px;
+        }
+    }
+}
+section{
+    .mid-header{
+        height:96px;
+        background:url(../../res/list_page/newRexiao.gif) no-repeat center center;
+    }
+    .product-produce{
+        div{
+            float:left;
+            width:283px;
+            height:220px;
+            cursor:pointer;
+        }
+        div:nth-of-type(1){
+            width:412px;
+            height:450px;
+            margin-right:10px;
+        }
+        div:nth-of-type(2){
+            margin-right:10px;
+        }
+        div:nth-of-type(4){
+            width:575px;
+            margin-top:10px;
+        }
+    }
+    .list-tit{
+        margin-top:20px;
+        height:37px;
+        line-height:37px;
+        background:#535353;
+        border-radius:5px 5px 0 0;
+        h4{
+            display:inline-block;
+            padding:0 13px;
+            font-size:16px;
+            color:#fff;
+        }
+        a{
+            display:inline-block;
+            padding:0 10px;
+            font-size:14px;
+            color:#fff;
+        }
+    }
+    .product-list{
+        padding:5px 0 50px 25px;
+        background:#fff;
+        figure{
+            margin-top:24px;
+            width:244px;
+            height:300px;
+            position:relative;
+            div{
+                width:220px;
+                height:220px;
+                border:1px solid #cecece;
+                position:relative;
+                img{
+                    position:absolute;
+                    height:206px;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    top:0;
+                    margin:auto;
+                }
+            }
+            figcaption{
+                line-height:42px;
+                font-size:12px;
+                color:#9393b8;
+            }
+            span{
+                position:absolute;
+                bottom:0;
+                color:#f52648;
+                font-size:12px;
+            }
+        }
+        .product-list-links{
+            text-align:center;
+            margin-top:50px;
+            a{
+                display:inline-block;
+                width:30px;
+                height:30px;
+                line-height:30px;
+                color:#666;
+                border-radius:3px;
+                border:1px solid #ccc;
+                text-align:center;
+                margin:0 5px;
+            }
+            a:last-child{
+                width:60px;
+                height:30px;
+            }
+            a:hover{
+                background:#d10048;
+                color:#fff;
+                border-color:#d10048;
+            }
+            .now{
+                background:#d10048;
+                color:#fff;
+                border-color:#d10048;
+            }
+        }
+    }
+}
