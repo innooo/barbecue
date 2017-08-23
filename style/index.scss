@@ -1,0 +1,222 @@
+.banner{
+    height:400px;
+    background:#fff;
+    img{
+        width:1152px;
+        height:400px;
+    }
+}
+
+.exhibition{
+        margin-left:6px;
+        margin-bottom:6px;
+        figure{
+            width:380px;
+            height:227px;
+            cursor:pointer;
+            position:relative;
+            img{
+                
+                width:190px;
+                height:227px;
+                transition:0.5s all;
+            }
+            
+            figcaption{
+                
+                background:#fff;
+                width:160px;
+                height:187px;
+                padding:20px 15px;
+                position:relative;
+                h3{
+                    font-size:12px;
+                    height:60px;
+                    line-height:22px;
+                }
+                p{
+                    font-size:12px;
+                    color:#969696;
+                    line-height:18px;
+                }
+                span{
+                    position:absolute;
+                    left:15px;
+                    bottom:20px;
+                    font-size:16px;
+                    font-weight:bold;
+                    color:#d10048;
+                }
+                .trigon{
+                    position:absolute;
+                    left:-28px;
+                    top:30%;
+                    border:14px solid transparent;
+                    border-right-color:#fff;
+                }
+            }
+            .left{
+                .trigon{
+                    border-right-color:transparent;
+                    border-left-color:#fff;
+                    left:190px;
+                }
+            }
+        }
+    }
+section{
+    margin-top:20px;
+    min-height:500px;
+    .section-beauty{
+        .beauty-tit{
+            width:380px;
+            height:227px;
+            background:url(../../res/img/section-beauty-tit.jpg) no-repeat center center;
+            cursor:pointer;
+        }
+        .beauty-product{
+            figure{
+                 &:hover>figcaption{
+                    background:#eeafce;
+                }
+                &:hover .trigon{
+                    border-color:transparent;
+                    border-right-color:#eeafce;
+                }
+                &:hover .left .trigon{
+                    border-color:transparent;
+                    border-left-color:#eeafce;
+                }
+                &:hover p{
+                    color:#fff;
+                }
+                &:hover img{
+                    transform:translateX(5px);
+                }
+                &:hover .right{
+                    transform:translateX(-5px);
+                }
+            }
+        }
+    }
+    .section-health{
+        .health-tit{
+            width:380px;
+            height:227px;
+            background:url(../../res/img/section-health-tit.jpg) no-repeat center center;
+            cursor:pointer;
+        }
+        .health-product{
+            figure{
+                &:hover>figcaption{
+                    background:#97c86c;
+                }
+                &:hover .trigon{
+                    border-color:transparent;
+                    border-right-color:#97c86c;
+                }
+                &:hover .left .trigon{
+                    border-color:transparent;
+                    border-left-color:#97c86c;
+                }
+                &:hover p{
+                    color:#fff;
+                }
+                &:hover img{
+                    transform:translateX(5px);
+                }
+                &:hover .right{
+                    transform:translateX(-5px);
+                }
+            }
+        }
+    }
+    .section-life{
+        .life-tit{
+            width:380px;
+            height:227px;
+            background:url(../../res/img/section-life-tit.jpg) no-repeat center center;
+            cursor:pointer;
+        }
+        .life-product{
+            figure{
+                &:hover>figcaption{
+                    background:#8ccedc;
+                }
+                &:hover .trigon{
+                    border-color:transparent;
+                    border-right-color:#8ccedc;
+                }
+                &:hover .left .trigon{
+                    border-color:transparent;
+                    border-left-color:#8ccedc;
+                }
+                &:hover p{
+                    color:#fff;
+                }
+                &:hover img{
+                    transform:translateX(5px);
+                }
+                &:hover .right{
+                    transform:translateX(-5px);
+                }
+            }
+        }
+        
+    }
+    
+}
+
+    
+.info{
+    min-height:200px;
+    .info-box{
+        figure{
+            &:hover img{
+                transform:translateX(5px);
+            }
+            &:hover .right{
+                transform:translateX(-5px);
+            }
+            &:hover .trigon{
+                border-color:transparent;
+                border-right-color:#fff;
+            }
+            &:hover .left .trigon{
+                border-color:transparent;
+                border-left-color:#fff;
+            }
+            &:hover p{
+                color:#666;
+            }
+            width:570px;
+            img{
+            width:342px;
+            height:227px;
+            }
+            .right{
+                width:342px;
+                height:227px;
+            }
+            figcaption{
+                width:198px;
+                h3{
+                    color:#888;
+                }
+                .trigon{
+                    
+                }
+                span{
+                    font-size:12px;
+                    font-weight:normal;
+                }
+            }
+            .left{
+                width:198px;
+                .trigon{
+                    left:228px;
+                }
+            }
+        }
+    }
+}
