@@ -2,61 +2,64 @@
 <html>
 
 	<head>
-		<!--<meta charset="UTF-8">
+		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="../style/common.css" />
-		<link rel="stylesheet" href="../style/index.css" />-->
+		<link rel="stylesheet" href="../style/register.css" />
 	</head>
 	<body>
-		<header id='header'>
-			<img src='../../res/img/newlogo.png' id='header-logo' alt='' />
-			<div class='header-links frt'>
-				<input type="button" id='search-btn' />|
-				<a href="#">登录</a>|
-				<a href="#">注册</a>|
-				<a href="#">我的账户</a>|
-				<a href="#" id='cart'></a>
+		
+		
+		<div class='main'>
+			<div class='content'>
+				<h1>
+					<a href="#">
+						
+					</a>
+				</h1>
+				<div class='form-box frt'>
+					<div class='form-top'>
+						已有麦考林帐号?
+						<a href='#'>立即登录</a>
+						<a href='#'>贵宾激活</a>
+					</div>
+					<form id='form-register'>
+						<label class='input-box'>
+							<i class='phone-img'></i>
+							<input type="text" placeholder='请输入手机号' />
+						</label>
+						<label class='input-box'>
+							<input type="text" id='code-box' placeholder='验证码' />
+							<figure>
+								<img src='../../res/login/captcha.png'  />
+								<figcaption>
+									换一张
+								</figcaption>
+							</figure>
+						</label>
+						<div class='input-box'>
+							<i class='code-img'></i>
+							<input type="text" placeholder='请输入短信验证码' />
+							<a href="#" id='get-code'>获取短信验证码</a>
+						</div>
+						<label class='input-box'>
+							<i class='code-img'></i>
+							<input type="password" placeholder='密码' />
+						</label>
+						<label class='input-box'>
+							<i class='code-img'></i>
+							<input type="password" placeholder='确认密码' />
+						</label>
+						
+						<div class='protocol'>
+							<input type="checkbox" />
+							<label>我已阅读并同意<a href='#'>《麦考林用户注册协议》 </a></label>
+						</div>
+						
+						<input type="button" value='注册' />
+					</form>
+				</div>
 			</div>
-			<div class='header-tel'>
-
-			</div>
-		</header>
-		<nav>
-			<ul>
-				<li>
-					<a href="#">首页</a>
-				</li>
-				<li>
-					<a href="#">品牌系列</a>
-				</li>
-				<li>
-					<a href="#">美容护肤</a>
-				</li>
-				<li>
-					<a href="#">健康养生</a>
-				</li>
-				<li>
-					<a href="#">家具日用</a>
-				</li>
-				<li>
-					<a href="#">积分换购</a>
-				</li>
-				<li>
-					<a href="#">VIP会员专区</a>
-				</li>
-				<li>
-					<a href="#">关于麦考林</a>
-				</li>
-				<li>
-					<a href="#">企业荣誉</a>
-				</li>
-			</ul>
-		</nav>
-		<div class='sidebar'>
-			<a href="#"><img src='../../res/img/rightSider_01.png' /></a>
-			<a href="#"><img src='../../res/img/rightSider_02.png' /></a>
-			<a href="#"><img src='../../res/img/gonggao.jpg' /></a>
-			<input type="button" />
 		</div>
 		<div class='bottom clear'>
 			<div class='bottom-links-left flt clear'>

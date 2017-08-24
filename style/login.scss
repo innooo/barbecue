@@ -1,0 +1,145 @@
+.main{
+    width:100%;
+    height:740px;
+    background:url(../../res/login/login-reg.gif) no-repeat center top;
+    .content{
+        width:986px;
+        margin:0 auto;
+        h1{
+            padding:5px 0;
+            margin-bottom:50px;
+            a{
+                display:block;
+                height:50px;
+                background:url(../../res/login/newlogo.png) no-repeat;
+            }
+        }
+    }
+    .form-box{
+        width:308px;
+        padding:23px 33px;
+        background:rgba(255,255,255,.6);
+        .form-top{
+            font-size:12px;
+            color:#666;
+            margin-bottom:12px;
+            a{
+                color:#FFC90E;
+                text-decoration:underline;
+            }
+            a:last-child{
+                float:right;
+            }
+        }
+        #form-login{
+            .input-box{
+                position:relative;
+                display:block;
+                width:100%;
+                border:1px solid #ccc;
+                margin-bottom:30px;
+                #get-code{
+                    position:absolute;
+                    display:block;
+                    width:110px;
+                    height:30px;
+                    line-height:30px;
+                    right:5px;
+                    top:0;
+                    bottom:0;
+                    margin:auto;
+                    border:1px solid #ccc;
+                    border-radius:15px;
+                    text-align:center;
+                }
+                input{
+                    width:283px;
+                    height:40px;
+                    border:0;
+                    outline:none;
+                    font-size:16px;
+                    color:#ccc;
+                    background:transparent;
+                    font-family:'幼圆';
+                }
+                #code-box{
+                    text-indent:23px;
+                    width:100%;
+                }
+                
+                i{
+                    display:inline-block;
+                    width:20px;
+                    height:22px;
+                    vertical-align:middle;
+                    background:url(../../res/login/index-bg.png) no-repeat;
+                }
+                .phone-img{
+                    background-position-x:-60px;
+                }
+                .code-img{
+                    background-position:-60px -45px;
+                }
+                figure{
+                    position:absolute;
+                    width:120px;
+                    height:30px;
+                    right:5px;
+                    top:0;
+                    bottom:0;
+                    margin:auto;
+                    cursor:pointer;
+                    img{
+                        float:left;
+                        height:30px;
+                        margin-right:5px;
+                    }
+                    figcaption{
+                        float:left;
+                        font-size:12px;
+                        color:#666;
+                        line-height:30px;
+                    }
+                }
+            }
+            .protocol{
+                width:100%;
+                input[type=checkbox]{
+                    width:14px;
+                    height:14px;
+                    outline:none; 
+                    vertical-align:center;  
+                }
+                label{
+                    display:inline-block;
+                    vertical-align:center;
+                    font-size:14px;
+                    color:#aaa;
+                }
+                a{
+                    color:#aaa;
+                    float:right;
+                }
+            } 
+            input[type=button]{
+                margin-top:20px;
+                font-family:'幼圆';
+                width:100%;
+                height:50px;
+                background:#d10048;
+                color:#fff;
+                font-size:18px;
+                letter-spacing:30px;
+                border:none;
+                border-radius:5px;
+            }
+            input::-moz-placeholder{
+                color:#aaa;
+            }
+            input::-webkit-input-placeholder{
+                color:#aaa;
+            }
+            
+        }
+    }
+}

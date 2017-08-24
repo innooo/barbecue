@@ -1,0 +1,151 @@
+header{
+    width:1038px;
+}
+.content{
+    width:978px;
+    margin:0 auto;
+    padding:24px 30px 40px;
+    min-height:500px;
+    background:#fff;
+    h2{
+        font-size:16px;
+        font-family:'幼圆';
+        text-indent:20px;
+        margin-bottom:16px;
+    }
+    table{
+        width:100%;
+        border:1px solid #ccc;
+        thead{
+            tr{
+               height:36px; 
+               border-bottom:1px solid #ccc;
+               background:#fafafa;
+               td{
+                   font-size:12px;
+                   color:#444;
+               }
+            }
+        }
+        tbody{
+            tr{
+                height:132px;
+                border-bottom:1px dashed #ccc;
+                background:#fffdeb;
+                td{
+                    align:center;
+                    text-align:center;
+                    vertical-align:middle;
+                    font-size:12px;
+                    color:#ccc;
+                    dl{
+                        width:250px;
+                        line-height:20px;
+                        margin:0 auto;
+                        dt{
+                            border:1px solid #ccc;
+                            width:92px;
+                            height:92px;
+                            margin-right:6px;
+                            img{
+                                height:88px;
+                                margin:0 auto;
+                            }
+                        }
+                        dd{
+                            width:150px;
+                            p{
+                                color:#444;
+                            }
+                            em{
+                                font-style:normal;
+                            }
+                        }
+                    }
+                    .count{
+                        width:92px;
+                        margin:0 auto;
+                        span{
+                            float:left;
+                            width:40px;
+                            line-height:22px;
+                            border-top:1px solid #ccc;
+                            border-bottom:1px solid #ccc;
+                            background:#fff;
+                            }
+                        input[type=button]{
+                         
+                            float:left;
+                            width:24px;
+                            height:24px;
+                            border:1px solid #ccc;
+                            background:transparent;
+                        }    
+                    }   
+                }
+            }
+            tr:last-child{
+                border:none;
+            }
+        }
+    }
+    .buying-footer{
+        margin-top:20px;
+        height:50px;
+        background:#fafafa;
+        label{
+            text-indent:15px;
+            display:inline-block;
+            font-size:12px;
+            color:#ccc;
+            vertical-align:middle;
+            margin-right:20px;
+            input[type=checkbox]{
+                
+            }
+        }
+        a{
+            display:inline-block;
+            vertical-align:middle;
+            font-size:12px;
+            color:#555;
+            padding:0 5px;
+            line-height:50px;
+        }
+        .buying-balance{
+            p{
+                padding-top:10px;
+                font-size:14px;
+                color:#aaa;
+                float:left;
+                line-height:20px;
+                span{
+                    font-weight:bold;
+                    color:#e51a65;
+                }
+            }
+            em{
+                float:left;
+                font-size:20px;
+                font-weight:bold;
+                color:#e51a65;
+                line-height:50px;
+                margin:0 10px;
+                font-style:normal;
+            }
+            input[type=button]{
+                width:150px;
+                height:50px;
+                line-height:50px;
+                float:left;
+                background:#e51a65;
+                color:#fff;
+                border:none;
+                outline:none;
+                border-radius:5px;
+                font-size:20px;
+                font-family:'幼圆';
+            }
+        }
+    }
+}
