@@ -3,9 +3,58 @@
     margin:0 auto;
 }
 .product-snapshot{
-    height:522px;
+    width:922px;
+    padding:20px 40px;
     background:#fff;
     margin-bottom:20px;
+    .snapshot-img{
+        
+        .snapshot-bigimg{
+            width:414px;
+            overflow:hidden;
+            margin-bottom:20px;
+            border:1px solid #e8e8e8;
+            ul{
+                width:828px;
+                li{
+                    height:364px;
+                    width:414px;
+                    float:left;
+                    position:relative;
+                    img{
+                        height:350px;
+                        position:absolute;
+                        left:0;
+                        top:0;
+                        bottom:0;
+                        right:0;
+                        margin:auto;
+                    }
+                }
+            }
+        }
+        .snapshot-minimg{
+            ul{
+                li{
+                    border:1px solid #e8e8e8;
+                    position:relative;
+                    height:92px;
+                    width:92px;
+                    margin-right:15px;
+                    float:left;
+                    img{
+                        height:86px;
+                        position:absolute;
+                        left:0;
+                        top:0;
+                        bottom:0;
+                        right:0;
+                        margin:auto;
+                    }
+                }
+            }
+        }
+    }
 }
 .product-detail{
     width:780px;
