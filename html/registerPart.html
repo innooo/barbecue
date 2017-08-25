@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div class='form-top'>
+			已有麦考林帐号?
+			<a href='#'>立即登录</a>
+			<a href='#'>贵宾激活</a>
+		</div>
+		<form id='form-register'>
+			<label class='input-box'>
+				<i class='phone-img'></i>
+				<input type="text" id='phone-box' placeholder='请输入手机号' />
+			</label>
+			<label class='input-box'>
+				<input type="text" id='code-box' placeholder='验证码' />
+				<figure>
+					<img src='../../res/login/captcha.png'  />
+					<figcaption>
+						换一张
+					</figcaption>
+				</figure>
+			</label>
+			<div class='input-box'>
+				<i class='code-img'></i>
+				<input type="text" id='msg-box' placeholder='请输入短信验证码' />
+				<a href="#" id='get-code'>获取短信验证码</a>
+			</div>
+			<label class='input-box'>
+				<i class='code-img'></i>
+				<input type="password" id='psw-box' placeholder='密码' />
+			</label>
+			<label class='input-box'>
+				<i class='code-img'></i>
+				<input type="password" id='psw-verify-box' placeholder='确认密码' />
+			</label>
+		
+			<div class='protocol'>
+				<input type="checkbox" id='agree' />
+				<label>我已阅读并同意<a href='#'>《麦考林用户注册协议》 </a></label>
+			</div>
+		
+			<input type="button" id='reg-btn' value='注册' />
+		</form>
+	</body>
+</html>
+
+
+

@@ -6,7 +6,6 @@
 //  7 pieces 34 per pieces
     .banner-btn{
         display:none;
-
         span{
             cursor:pointer;
             z-index:20;
@@ -124,9 +123,10 @@
 }
 
 .exhibition{
-        margin-left:6px;
         margin-bottom:6px;
         position:relative;
+        width:380px;
+        height:227px;
         figure{
             width:380px;
             height:227px;
@@ -261,10 +261,22 @@
 section{
     margin-top:20px;
     min-height:500px;
+    .section-banner{
+        width:380px;
+        height:460px;
+        img{
+            width:380px;
+            height:460px;
+        }
+    }
+    .beauty-banner{
+        margin:0 6px;
+    }
     .section-beauty{
         .beauty-tit{
             width:380px;
             height:227px;
+            margin-bottom:6px;
             background:url(../../res/img/section-beauty-tit.jpg) no-repeat center center;
             cursor:pointer;
         }
@@ -292,11 +304,15 @@ section{
                 }
             }
         }
+        >.beauty-product:nth-of-type(2){
+            margin:0 6px;
+        }
     }
     .section-health{
         .health-tit{
             width:380px;
             height:227px;
+            margin-bottom:6px;
             background:url(../../res/img/section-health-tit.jpg) no-repeat center center;
             cursor:pointer;
         }
@@ -324,11 +340,18 @@ section{
                 }
             }
         }
+        .health-product:nth-of-type(2){
+            margin:0 6px;
+        }
+        .health-product:nth-of-type(3){
+            margin:0 6px;
+        }
     }
     .section-life{
         .life-tit{
             width:380px;
             height:227px;
+            margin:0 6px 6px;
             background:url(../../res/img/section-life-tit.jpg) no-repeat center center;
             cursor:pointer;
         }
@@ -365,6 +388,7 @@ section{
 .info{
     min-height:200px;
     .info-box{
+        width:570px;
         figure{
             &:hover img{
                 transform:translateX(5px);

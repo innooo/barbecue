@@ -8,14 +8,18 @@
 		<link rel="stylesheet" href="style/index.css" />
 		<script src='javascript/jquery.js'></script>
 		<script src='javascript/common.js'></script>
+		<script src='javascript/homePageBanner.js'></script>
+		<script src='javascript/homePageContent.js'></script>
+		<script src='javascript/homepageDataLoad.js'></script>
 	</head>
+
 	<body>
 		<header>
 			<img src='../res/img/newlogo.png' id='header-logo' alt='' />
 			<div class='header-links frt'>
 				<input type="button" id='search-btn' />|
-				<a href="#">登录</a>|
-				<a href="#">注册</a>|
+				<a href="html/login.html">登录</a>|
+				<a href="html/register.html">注册</a>|
 				<a href="#">我的账户</a>|
 				<a href="#" id='cart'>
 					<em>0</em>
@@ -57,7 +61,7 @@
 			</ul>
 		</nav>
 		<div class='sidebar'>
-			
+
 			<a href="#"><img src='../res/img/rightSider_01.png' /></a>
 			<a href="#">
 				<img src='../res/img/rightSider_02.png' />
@@ -70,8 +74,7 @@
 			<a href="#"><img src='../res/img/gonggao.jpg' /></a>
 			<input type="button" />
 		</div>
-		
-		
+
 		<div class='banner'>
 			<div class='banner'>
 				<div class='banner-btn'>
@@ -165,137 +168,272 @@
 							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
 						</ul>
 					</li>
-				</ul>	
+				</ul>
 			</div>
 		</div>
-		
-		
+
 		<section>
 			<div class='section-beauty clear'>
 				<div class='beauty-tit flt'>
 				</div>
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition beauty-product clickshow flt'>
+					<figure>
+						<img src='' class='right frt' />
+						<figcaption class='left flt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在右边的模块----结束***************-->
+
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition beauty-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+						<figcaption class='left flt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在右边的模块----结束***************-->
+
+				<div class='flt clear' style='width=380px'>
+					<!--**********图片在右边的模块----开始***************-->
+					<div class='exhibition beauty-product clickshow'>
+						<figure>
+							<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+							<figcaption class='left flt'>
+								
+							</figcaption>
+						</figure>
+					</div>
+					<!--**********图片在右边的模块----结束***************-->
+					<!--**********图片在左边的模块----开始***************-->
+					<div class='exhibition beauty-product clickshow'>
+						<figure>
+							<img src='../res/img/section-beauty-product1.jpg' class='flt' />
+							<figcaption class='frt'>
+								
+							</figcaption>
+						</figure>
+					</div>
+					<!--**********图片在左边的模块----结束***************-->
+				</div>
+
+				<!--///////////////////////////-->
+				<div class='section-banner beauty-banner flt'>
+					<img src='../res/img/beauty.jpg' />
+				</div>
+				<!--///////////////////////////-->
+				<!--**********图片在左边的模块----开始***************-->
 				<div class='exhibition beauty-product clickshow flt'>
 					<figure>
 						<img src='../res/img/section-beauty-product1.jpg' class='flt' />
 						<figcaption class='frt'>
-							<h3>
-								LA CELLER 胶原蛋白精华线球超值分享装
-							</h3>
-							<p>
-								神奇的胶原蛋白线球,具有三重螺旋分子结构,溶于水并被吸收,不受温度影响,使肌肤滋润 光泽 有弹性!
-							</p>
-							<span>
-								$ 3820
-							</span>
-							<div class='trigon'></div>
+
 						</figcaption>
 					</figure>
-					<div class='exhibition-detail'>
-						<input type="button" class='exh-detail-close' />
-						<div class='exh-detail-img'>
-							<img src='../res/img/1490296369700099015.jpg'  />
-						</div>
-						<div class='exh-detail-produce'>
-							<h4>秘密花园玫瑰鲜活水</h4>
-							<p>优选新鲜玫瑰花瓣，采用特殊工艺，单纯萃取玫瑰花瓣的水分，滴滴精粹，层层沁润肌肤；馥郁的玫瑰芬芳，淡雅自然…
-							</p>
-							<div class='clear'>
-								<div class='exh-detail-price frt'>
-									<span>$499</span>
-									<em></em>
-									<a href='#'>查看详情&gt;&gt;</a>
-								</div>
-							</div>
-							
-						</div>
-						
-						<div class='exh-detail-minimg'>
-							<a href='#'>
-								<img src='../res/img/5428_thumb_P_1468174726509.jpg'  />
-								<img src='../res/img/5428_thumb_P_1468174727571.jpg'  />
-							</a>
-							
-						</div>
-					</div>
 				</div>
-				<div class='exhibition beauty-product flt'>
+				<!--**********图片在左边的模块----结束***************-->
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition beauty-product clickshow flt'>
 					<figure>
 						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
 						<figcaption class='left flt'>
-							<h3>
-								LA CELLER 胶原蛋白精华线球超值分享装
-							</h3>
-							<p>
-								神奇的胶原蛋白线球,具有三重螺旋分子结构,溶于水并被吸收,不受温度影响,使肌肤滋润 光泽 有弹性!
-							</p>
-							<span>
-								$ 3820
-							</span>
-							<div class='trigon'></div>
+							
 						</figcaption>
 					</figure>
 				</div>
+				<!--**********图片在右边的模块----结束***************-->
+
 			</div>
 			<div class='section-health clear'>
+				<!--**********图片在左边的模块----开始***************-->
+				<div class='exhibition health-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='flt' />
+						<figcaption class='frt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在左边的模块----结束***************-->
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition health-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+						<figcaption class='left flt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在右边的模块----结束***************-->
+
+				<!--*************标题*************-->
 				<div class='health-tit flt'>
 
 				</div>
-				<div class='exhibition health-product flt'>
+				<!--**************标题****************-->
+
+				<!--///////////////////////////-->
+				<div class='section-banner flt'>
+					<img src='../res/img/health.jpg' />
+				</div>
+				<!--///////////////////////////-->
+
+				<!--**********图片在左边的模块----开始***************-->
+				<div class='exhibition health-product clickshow flt'>
 					<figure>
-						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
-						<figcaption class='left flt'>
-							<h3>
-								LA CELLER 胶原蛋白精华线球超值分享装
-							</h3>
-							<p>
-								神奇的胶原蛋白线球,具有三重螺旋分子结构,溶于水并被吸收,不受温度影响,使肌肤滋润 光泽 有弹性!
-							</p>
-							<span>
-								$ 3820
-							</span>
-							<div class='trigon'></div>
+						<img src='../res/img/section-beauty-product1.jpg' class='flt' />
+						<figcaption class='frt'>
+							
+						</figcaption>
+					</figure>
+					
+				</div>
+				<!--**********图片在左边的模块----结束***************-->
+				<!--**********图片在左边的模块----开始***************-->
+				<div class='exhibition health-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='flt' />
+						<figcaption class='frt'>
+							
 						</figcaption>
 					</figure>
 				</div>
+				<!--**********图片在左边的模块----结束***************-->
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition health-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+						<figcaption class='left flt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在右边的模块----结束***************-->
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition health-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+						<figcaption class='left flt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在右边的模块----结束***************-->
 			</div>
 			<div class='section-life clear'>
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition life-product clickshow flt'>
+					<figure>
+						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+						<figcaption class='left flt'>
+							
+						</figcaption>
+					</figure>
+				</div>
+				<!--**********图片在右边的模块----结束***************-->
+				<!--***************标题***********-->
 				<div class='life-tit flt'>
 
 				</div>
-				<div class='exhibition life-product flt'>
+				<!--***************标题*************-->
+
+				<!--**********图片在右边的模块----开始***************-->
+				<div class='exhibition life-product clickshow flt'>
 					<figure>
 						<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
 						<figcaption class='left flt'>
-							<h3>
-								LA CELLER 胶原蛋白精华线球超值分享装
-							</h3>
-							<p>
-								神奇的胶原蛋白线球,具有三重螺旋分子结构,溶于水并被吸收,不受温度影响,使肌肤滋润 光泽 有弹性!
-							</p>
-							<span>
-								$ 3820
-							</span>
-							<div class='trigon'></div>
+							
 						</figcaption>
 					</figure>
 				</div>
+				<!--**********图片在右边的模块----结束***************-->
+				<div class='flt' style='width=380px;'>
+					<!--**********图片在左边的模块----开始***************-->
+					<div class='exhibition life-product clickshow'>
+						<figure>
+							<img src='../res/img/section-beauty-product1.jpg' class='flt' />
+							<figcaption class='frt'>
+								
+							</figcaption>
+						</figure>
+					</div>
+					<!--**********图片在左边的模块----结束***************-->
+					<!--**********图片在右边的模块----开始***************-->
+					<div class='exhibition life-product clickshow'>
+						<figure>
+							<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+							<figcaption class='left flt'>
+								
+							</figcaption>
+						</figure>
+					</div>
+					<!--**********图片在右边的模块----结束***************-->
+				</div>
+
+				<div class='flt' style='width=380px;'>
+					<!--**********图片在左边的模块----开始***************-->
+					<div class='exhibition life-product clickshow'>
+						<figure>
+							<img src='../res/img/section-beauty-product1.jpg' class='flt' />
+							<figcaption class='frt'>
+								
+							</figcaption>
+						</figure>
+					</div>
+					<!--**********图片在左边的模块----结束***************-->
+					<!--**********图片在右边的模块----开始***************-->
+					<div class='exhibition life-product clickshow'>
+						<figure>
+							<img src='../res/img/section-beauty-product1.jpg' class='right frt' />
+							<figcaption class='left flt'>
+								
+							</figcaption>
+						</figure>
+					</div>
+					<!--**********图片在右边的模块----结束***************-->
+				</div>
+				<!--///////////////////////////-->
+				<div class='section-banner flt'>
+					<img src='../res/img/life.jpg' />
+				</div>
+				<!--///////////////////////////-->
+
 			</div>
 		</section>
 		<div class='info clear'>
 			<div class='exhibition info-box flt'>
 				<figure>
-					<img src='../res/img/info1.jpg' class='right frt' />
+					<img src='' class='right frt' />
 					<figcaption class='left flt'>
-						<h3>
-								LA CELLER 胶原蛋白精华线球超值分享装
-							</h3>
-						<p>
-							神奇的胶原蛋白线球,具有三重螺旋分子结构,溶于水并被吸收,不受温度影响,使肌肤滋润 光泽 有弹性!
-						</p>
-						<span>
-								查看全文 >>
-							</span>
-						<div class='trigon'></div>
+						
+					</figcaption>
+				</figure>
+			</div>
+			<div class='exhibition info-box flt'>
+				<figure>
+					<img src='' class='right frt' />
+					<figcaption class='left flt'>
+						
+					</figcaption>
+				</figure>
+			</div>
+			<div class='exhibition info-box flt'>
+				<figure>
+					<img src='#' class='right frt' />
+					<figcaption class='left flt'>
+						
+					</figcaption>
+				</figure>
+			</div>
+			<div class='exhibition info-box flt'>
+				<figure>
+					<img src='' class='right frt' />
+					<figcaption class='left flt'>
+
 					</figcaption>
 				</figure>
 			</div>
