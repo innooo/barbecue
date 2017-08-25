@@ -6,8 +6,9 @@
 		<title></title>
 		<link rel="stylesheet" href="style/common.css" />
 		<link rel="stylesheet" href="style/index.css" />
+		<script src='javascript/jquery.js'></script>
+		<script src='javascript/common.js'></script>
 	</head>
-
 	<body>
 		<header>
 			<img src='../res/img/newlogo.png' id='header-logo' alt='' />
@@ -16,7 +17,9 @@
 				<a href="#">登录</a>|
 				<a href="#">注册</a>|
 				<a href="#">我的账户</a>|
-				<a href="#" id='cart'></a>
+				<a href="#" id='cart'>
+					<em>0</em>
+				</a>
 			</div>
 			<div class='header-tel'>
 
@@ -54,20 +57,124 @@
 			</ul>
 		</nav>
 		<div class='sidebar'>
+			
 			<a href="#"><img src='../res/img/rightSider_01.png' /></a>
-			<a href="#"><img src='../res/img/rightSider_02.png' /></a>
+			<a href="#">
+				<img src='../res/img/rightSider_02.png' />
+				<div class='sidebar-panel'>
+					<p>400-2397-800</p>
+					<span>每天9:00-17:30</span>
+					<div></div>
+				</div>
+			</a>
 			<a href="#"><img src='../res/img/gonggao.jpg' /></a>
 			<input type="button" />
 		</div>
+		
+		
 		<div class='banner'>
-			<img src='../res/img/homepagebanner1.jpg' />
+			<div class='banner'>
+				<div class='banner-btn'>
+					<span>&lt;</span>
+					<span>&gt;</span>
+				</div>
+
+				<ul class='banner-index'>
+					<li class='now'></li>
+					<li></li>
+					<li></li>
+				</ul>
+				<ul>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+					<li>
+						<ul class='move'>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg02.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg03.jpg" alt="" /></li>
+							<li><img src="../../res/img/bannerImg01.jpg" alt="" /></li>
+						</ul>
+					</li>
+				</ul>	
+			</div>
 		</div>
+		
+		
 		<section>
 			<div class='section-beauty clear'>
 				<div class='beauty-tit flt'>
-
 				</div>
-				<div class='exhibition beauty-product flt'>
+				<div class='exhibition beauty-product clickshow flt'>
 					<figure>
 						<img src='../res/img/section-beauty-product1.jpg' class='flt' />
 						<figcaption class='frt'>
@@ -83,6 +190,33 @@
 							<div class='trigon'></div>
 						</figcaption>
 					</figure>
+					<div class='exhibition-detail'>
+						<input type="button" class='exh-detail-close' />
+						<div class='exh-detail-img'>
+							<img src='../res/img/1490296369700099015.jpg'  />
+						</div>
+						<div class='exh-detail-produce'>
+							<h4>秘密花园玫瑰鲜活水</h4>
+							<p>优选新鲜玫瑰花瓣，采用特殊工艺，单纯萃取玫瑰花瓣的水分，滴滴精粹，层层沁润肌肤；馥郁的玫瑰芬芳，淡雅自然…
+							</p>
+							<div class='clear'>
+								<div class='exh-detail-price frt'>
+									<span>$499</span>
+									<em></em>
+									<a href='#'>查看详情&gt;&gt;</a>
+								</div>
+							</div>
+							
+						</div>
+						
+						<div class='exh-detail-minimg'>
+							<a href='#'>
+								<img src='../res/img/5428_thumb_P_1468174726509.jpg'  />
+								<img src='../res/img/5428_thumb_P_1468174727571.jpg'  />
+							</a>
+							
+						</div>
+					</div>
 				</div>
 				<div class='exhibition beauty-product flt'>
 					<figure>

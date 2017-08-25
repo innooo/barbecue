@@ -1,0 +1,93 @@
+*{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style:none;
+}
+img{
+    display:block;
+}
+.banner{
+    width:1152px;
+    height:400px;
+    margin:50px auto;
+//  7 pieces 34 per pieces
+    >ul{
+        >li{
+            height:40px;
+            overflow:hidden;
+            position:relative;
+            ul{
+                height:160px;
+                width:1152px;
+                overflow:hidden;
+                position:absolute;
+                left:0;
+                top:0;
+                li{
+                    height:40px;
+                    overflow:hidden;
+                    position:relative;
+                    img{
+                        position:absolute;
+                        left:0;
+                        top:0;
+                    }
+                }
+            }
+        }
+        >li:nth-of-type(2){
+            img{
+            top:-40px;
+            }
+        }
+        >li:nth-of-type(3){
+            img{
+            top:-80px;
+            }
+        }
+        >li:nth-of-type(4){
+            img{
+            top:-120px;
+            }
+        }
+        >li:nth-of-type(5){
+            img{
+            top:-160px;
+            }
+        }
+        >li:nth-of-type(6){
+            img{
+            top:-200px;
+            }
+        }
+        >li:nth-of-type(7){
+            img{
+            top:-240px;
+            }
+        } 
+        >li:nth-of-type(8){
+            img{
+            top:-280px;
+            }
+        }
+        >li:nth-of-type(9){
+            img{
+            top:-320px;
+            }
+        }
+        >li:nth-of-type(10){
+            img{
+            top:-360px;
+            }
+        }       
+    }
+}
+#btn{
+    width:100px;
+    height:60px;
+    position:absolute;
+    left:0;
+    top:30%;
+}

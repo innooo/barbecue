@@ -84,6 +84,21 @@ header{
             width:30px;
             background:url(../../res/img/index-bg.png) no-repeat 3px -41px;
             height:32px;
+            position:relative;
+            em{
+                position:absolute;
+                right:0;
+                top:0;
+                width:18px;
+                height:18px;
+                background:#d10048;
+                line-height:18px;
+                text-align:center;
+                color:#fff;
+                font-size:12px;
+                border-radius:50%;
+                font-style:normal;
+            }
         }
     }
     .header-tel{
@@ -124,7 +139,7 @@ nav{
 }
 .sidebar{
     position:fixed;
-    right:0;
+    right:10px;
     top:80px;
     a{
         display:block;
@@ -134,17 +149,62 @@ nav{
     a:first-child{
         border-bottom:1px solid #fff;
     }
+    a:nth-of-type(2){
+        position:relative;
+        &:hover .sidebar-panel{
+            display:block;
+            transform:translateX(40px);
+            opacity:0.7;
+        }
+        &:hover .sidebar-panel div{
+            border-left-color:rgba(255,255,255,.8);
+        }
+    }
     a:nth-of-type(3){
         height:79px;
     }
     input{
         display:block;
+        opacity:0;
         margin:0;
         padding:0;
         width:54px;
         height:35px;
         outline:none;
         background:url(../../res/img/rightSider_04.png) no-repeat center top;
+    }
+    .sidebar-panel{
+        z-index:-2;
+        position:absolute;
+        left:-285px;
+        top:-1px;
+        width:227px;
+        padding:25px 0;
+        background:rgba(255,255,255,1);
+        opacity:0;
+        border-radius:5px;
+        transition:0.5s all;
+        div{
+            border:10px solid transparent;
+            border-left-color:rgba(255,255,255,0);
+            position:absolute;
+            top:50%;
+            margin-top:-10px;
+            right:-20px;
+            z-index:10;
+        }
+        p{
+            font-size:22px;
+            font-family:'幼圆';
+            margin:0 auto;
+            text-align:center;
+            line-height:30px;
+        }
+        span{
+            font-size:14px;
+            display:block;
+            text-align:center;
+        }
     }
 }
 .bottom{

@@ -1,15 +1,132 @@
 .banner{
+    width:1152px;
     height:400px;
-    background:#fff;
-    img{
-        width:1152px;
-        height:400px;
+    margin:0 auto;
+    position:relative;
+//  7 pieces 34 per pieces
+    .banner-btn{
+        display:none;
+
+        span{
+            cursor:pointer;
+            z-index:20;
+            position:absolute;
+            width:40px;
+            height:60px;
+            font-size:30px;
+            line-height:60px;
+            text-align:center;
+            background:rgba(0,0,0,.5);
+            color:#fff;
+            top:50%;
+            margin-top:-40px;
+            &:hover{
+                background:#ff7f27;
+            }
+        }
+        span:first-child{
+            left:0;
+        }
+        span:last-child{
+            right:0;
+        }
+    }
+    .banner-index{
+        position:absolute;
+        z-index:20;
+        width:540px;
+        height:6px;
+        left:0;
+        right:0;
+        margin:auto;
+        bottom:0;
+        li{
+            cursor:pointer;
+            float:left;
+            height:6px;
+            width:180px;
+            background:#fff;
+        }
+        .now{
+            background:#ff7f27;
+        }
+    }
+    >ul{
+        >li{
+            height:40px;
+            overflow:hidden;
+            position:relative;
+            ul{
+                height:160px;
+                width:1152px;
+                overflow:hidden;
+                position:absolute;
+                left:0;
+                top:0;
+                li{
+                    height:40px;
+                    overflow:hidden;
+                    position:relative;
+                    img{
+                        position:absolute;
+                        left:0;
+                        top:0;
+                    }
+                }
+            }
+        }
+        >li:nth-of-type(2){
+            img{
+            top:-40px;
+            }
+        }
+        >li:nth-of-type(3){
+            img{
+            top:-80px;
+            }
+        }
+        >li:nth-of-type(4){
+            img{
+            top:-120px;
+            }
+        }
+        >li:nth-of-type(5){
+            img{
+            top:-160px;
+            }
+        }
+        >li:nth-of-type(6){
+            img{
+            top:-200px;
+            }
+        }
+        >li:nth-of-type(7){
+            img{
+            top:-240px;
+            }
+        } 
+        >li:nth-of-type(8){
+            img{
+            top:-280px;
+            }
+        }
+        >li:nth-of-type(9){
+            img{
+            top:-320px;
+            }
+        }
+        >li:nth-of-type(10){
+            img{
+            top:-360px;
+            }
+        }       
     }
 }
 
 .exhibition{
         margin-left:6px;
         margin-bottom:6px;
+        position:relative;
         figure{
             width:380px;
             height:227px;
@@ -60,6 +177,83 @@
                     border-right-color:transparent;
                     border-left-color:#fff;
                     left:190px;
+                }
+            }
+        }
+        .exhibition-detail{
+           
+            position:absolute;
+            background:#fff;
+            overflow:hidden;
+//          height:227px;
+//          height:693px;
+            width:0;
+            height:0;
+            z-index:10;
+            top:0;
+            left:0;
+            .exh-detail-close{
+                cursor:pointer;
+                position:absolute;
+                right:5px;
+                top:5px;
+                width:30px;
+                height:30px;
+                border:none;
+                outline:none;
+                background:url(../../res/img/vivo-head-ico.png) no-repeat -83px top;
+            }
+            .exh-detail-img{
+                width:100%;
+                margin-bottom:30px;
+                img{
+                    height:227px;
+                }
+            }
+            .exh-detail-produce{
+                padding:0 20px;
+            }
+            h4{
+                font-size:14px;
+                color:#aaa;
+                line-height:26px;
+            }
+            p{
+                font-size:12px;
+                color:#ccc;
+                line-height:24px;
+            }
+            .exh-detail-price{
+                padding-top:5px;
+                span{
+                    display:inline-block;
+                    vertical-align:middle;
+                    font-size:14px;
+                    color:#cc3333;
+                }
+                em{
+                    cursor:pointer;
+                    display:inline-block;
+                    vertical-align:middle;
+                    width:29px;
+                    height:28px;
+                    background:url(../../res/img/index-bg.png) no-repeat left -113px;
+                    margin:0 10px 0 5px;
+                }
+                a{
+                    display:inline-block;
+                    vertical-align:middle;
+                    line-height:28px;
+                    font-size:12px;
+                    color:#ccc;
+                }
+            }
+            .exh-detail-minimg{
+                padding-top:30px;
+                img{
+                    float:left;
+                    margin-left:30px;
+                    height:100px;
                 }
             }
         }
