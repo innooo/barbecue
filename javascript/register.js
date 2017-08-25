@@ -18,7 +18,7 @@ $(document).ready(function(){
 			return function(data){
 				$('.form-box').html(data);
 //				console.log($(".form-top a:contains('立即登录')"));
-//				clickReg();
+				checkRegInfo();
 			}
 		}
 	//加载表单页面----结束
@@ -41,6 +41,7 @@ $(document).ready(function(){
 			function showLogin(){
 				return function(data){
 					$('.form-box').html(data);
+					checkLoginInfo();
 				}
 			}
 		});
@@ -63,6 +64,7 @@ $(document).ready(function(){
 			function showLogin(){
 				return function(data){
 					$('.form-box').html(data);
+					checkRegInfo();
 				}
 			}
 		});
@@ -84,7 +86,7 @@ $(document).ready(function(){
 			var code  = $('#code-box').val();
 			var msg   = $('#msg-box').val();
 			var psw   = $('#psw-box').val();
-			var numList = {"phone":phone,"code":code,"msg":msg,"psw":psw};
+			var numList = {phone:phone,code:code,msg:msg,psw:psw};
 			$.ajax({
 				type:'GET',
 				url:'../../dist/php/register.php',
@@ -92,13 +94,11 @@ $(document).ready(function(){
 				timeout:10000,
 				beforeSend:function(){},
 				dataType:'JSON',
-				success:function(data){console.log(1);console.log(data);},
+				success:function(data){},
 				error:function(){console.log('error')},
-				complete:function(){},
+				complete:function(data){},
 				global:true
 			});
 		}
-		
 	});
-	//验证手机号实现注册功能-----结束
 });

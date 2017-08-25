@@ -13,28 +13,32 @@
 		<form id='form-login'>
 			<label class='input-box'>
 				<i class='phone-img'></i>
-				<input type="text" placeholder='用户名' />
+				<input type="text" id='phone-box' placeholder='用户名' />
+				<div class='tips'></div>
 			</label>
 			<label class='input-box'>
 				<i class='code-img'></i>
-				<input type="password" placeholder='密码' />
+				<input type="password" id='psw-box' placeholder='密码' />
+				<div class='tips'></div>
 			</label>
 			<label class='input-box'>
 				<input type="text" id='code-box' placeholder='验证码' />
+				<div class='tips'></div>
 				<figure>
-					<img src='../../res/login/captcha.png'  />
-					<figcaption>
+					<img src='' id='code-img' />
+					<figcaption id='change-code'>
 						换一张
 					</figcaption>
 				</figure>
 			</label>
 		
 			<div class='protocol'>
-				<input type="checkbox" />
-				<label>记住密码</label>
+				<input type="checkbox" id='agree' />
+				<div class='tips' style='left:80px;bottom:-5px'></div>
+				<label for='agree'>记住密码</label>
 				<a href='#'>忘记密码?</a>
 			</div>
-			<input type="button" value='登录' />
+			<input type="button" id='reg-btn' value='登录' />
 		</form>
 	</body>
 </html>

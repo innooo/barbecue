@@ -16,6 +16,7 @@ $(document).ready(function(){
 		function showRegister(){
 			return function(data){
 				$('.form-box').html(data);
+				checkLoginInfo();
 			}
 		}
 	//加载表单页面----结束
@@ -37,6 +38,7 @@ $(document).ready(function(){
 			function showLogin(){
 				return function(data){
 					$('.form-box').html(data);
+					checkRegInfo();
 				}
 			}
 		});
@@ -58,7 +60,9 @@ $(document).ready(function(){
 			function showLogin(){
 				return function(data){
 					$('.form-box').html(data);
+					checkLoginInfo();
 				}
 			}
 		});
+		
 });

@@ -14,32 +14,39 @@
 			<label class='input-box'>
 				<i class='phone-img'></i>
 				<input type="text" id='phone-box' placeholder='请输入手机号' />
+				<div class='tips'></div>
 			</label>
 			<label class='input-box'>
 				<input type="text" id='code-box' placeholder='验证码' />
+				<div class='tips'></div>
 				<figure>
-					<img src='../../res/login/captcha.png'  />
-					<figcaption>
+					<img src='' id='code-img' />
+					<figcaption id='change-code'>
 						换一张
 					</figcaption>
 				</figure>
 			</label>
 			<div class='input-box'>
 				<i class='code-img'></i>
+				<div id='randomnum'></div>
 				<input type="text" id='msg-box' placeholder='请输入短信验证码' />
+				<div class='tips'></div>
 				<a href="#" id='get-code'>获取短信验证码</a>
 			</div>
 			<label class='input-box'>
 				<i class='code-img'></i>
 				<input type="password" id='psw-box' placeholder='密码' />
+				<div class='tips'></div>
 			</label>
 			<label class='input-box'>
 				<i class='code-img'></i>
 				<input type="password" id='psw-verify-box' placeholder='确认密码' />
+				<div class='tips'></div>
 			</label>
 		
 			<div class='protocol'>
 				<input type="checkbox" id='agree' />
+				<div class='tips' style='left:0;bottom:-22px'></div>
 				<label>我已阅读并同意<a href='#'>《麦考林用户注册协议》 </a></label>
 			</div>
 		

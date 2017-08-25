@@ -32,6 +32,17 @@
             }
         }
         #form-login{
+            .tips{
+                font-size:12px;
+                line-height:30px;
+                color:red;
+                height:30px;
+                position:absolute;
+                bottom:-30px;
+                left:30px;
+                z-index:10;
+                display:none;
+            }
             .input-box{
                 position:relative;
                 display:block;
@@ -102,8 +113,12 @@
                     }
                 }
             }
+            .correct{
+                border-color:#22b14c;
+            }
             .protocol{
                 width:100%;
+                position:relative;
                 input[type=checkbox]{
                     width:14px;
                     height:14px;
