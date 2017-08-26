@@ -85,8 +85,7 @@ function checkLoginInfo() {
 			global:true
 		});
 		function result(data){
-			console.log(data);
-			if(data == '0'){
+			if(data == 0){
 				console.log(1);
 				$('#psw-box').next().css('display', 'block').html('*密码错误');
 				verityArr[2] = 0;
@@ -102,7 +101,7 @@ function checkLoginInfo() {
 	});
 	//end
 
-	$('#reg-btn').click(function() {
+	$('#login-btn').click(function() {
 		var btn = 0;
 		//verify checkbox is checked
 		if(!$('#agree').is(':checked')) {

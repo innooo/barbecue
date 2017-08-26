@@ -16,3 +16,22 @@ $(document).ready(function() {
 	});
 	//****页面滚动 显示 / 隐藏 回到顶端按钮 ----结束 ******
 });
+
+function getCookie(name){
+	var cookie = document.cookie;
+	cookie = cookie.split('; ');
+	for(var i = 0;i < cookie.length;i++){
+		var temp = cookie[i].split('=');
+		if(temp[0] == name){
+			return decodeURIComponent(temp[1]);
+		}
+	}
+}
+function setCookie(name,value,day,path){
+	var date = new Date();
+	date = date.setDate(date.getDate() + day);
+	document.cookie = `${name}=${encodeURIComponent(value)};expires=${date};path=${path}`;
+}
+function removeCookie(name){
+	document.cookie = name + ';expires=-1;path=/';
+}

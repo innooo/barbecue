@@ -70,7 +70,11 @@ section{
     .product-list{
         padding:5px 0 50px 25px;
         background:#fff;
+        .product-list-wrap{
+            height:1300px;
+        }
         figure{
+            cursor:pointer;
             margin-top:24px;
             width:244px;
             height:300px;

@@ -10,26 +10,42 @@ section {
     background: #fff;
     margin-bottom: 20px;
     .snapshot-img {
-        .snapshot-bigimg {
+        position:relative;
+        .snapshot-bigimg{
+            display:none;
+            width:300px;
+            height:300px;
+            position:absolute;
+            right:-310px;
+            top:0;
+            overflow:hidden;
+            border:1px solid red;
+            li{
+                position:absolute;
+                top:-50px;
+                left:-90px;
+                img{
+                    width:615px;
+                    height:800px;
+                }
+            }
+        }
+        .snapshot-midimg {
             width: 414px;
             overflow: hidden;
             margin-bottom: 20px;
             border: 1px solid #e8e8e8;
             ul {
-                width: 828px;
+                width: 1242px;
                 li {
-                    height: 364px;
+                    height: 350px;
+                    padding:7px 0;
                     width: 414px;
                     float: left;
                     position: relative;
                     img {
                         height: 350px;
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        bottom: 0;
-                        right: 0;
-                        margin: auto;
+                        margin: 0 auto;
                     }
                 }
             }
@@ -192,9 +208,13 @@ section {
         padding: 16px;
         .product-detail-content {
             min-height: 800px;
+            img{
+                margin:0 auto;
+                width:730px;
+            }
         }
         h3 {
-            height: px;
+            height: 32px;
             font-size: 16px;
             line-height: 32px;
             border-bottom: 2px solid #d10048;
