@@ -15,6 +15,21 @@ $(document).ready(function() {
 		}
 	});
 	//****页面滚动 显示 / 隐藏 回到顶端按钮 ----结束 ******
+	//购物车按钮
+	$('#cart').click(function(){
+		window.location.href = '../html/cart.html';
+	});
+	//登录注册按钮
+	$('#search-btn~a').eq(0).click(function(){
+		window.location.href = '../html/login.html';
+	})
+	$('#search-btn~a').eq(1).click(function(){
+		window.location.href = '../html/register.html';
+	})
+	//logo 按钮
+	$('#header-logo').click(function(){
+		window.location.href = '../index.html';
+	});
 });
 
 function getCookie(name){

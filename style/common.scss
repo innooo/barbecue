@@ -48,6 +48,7 @@ header{
     position:relative;
     height:70px;
     #header-logo{
+        cursor:pointer;
         position:absolute;
         bottom:14px;
         left:0;
@@ -158,6 +159,7 @@ nav{
             opacity:0.7;
         }
         &:hover .sidebar-panel div{
+            display:block;
             z-index:20;
             border-left-color:rgba(255,255,255,.8);
         }
@@ -176,6 +178,7 @@ nav{
         background:url(../../res/img/rightSider_04.png) no-repeat center top;
     }
     .sidebar-panel{
+        display:none;
         z-index:-2;
         position:absolute;
         left:-285px;
@@ -187,6 +190,7 @@ nav{
         border-radius:5px;
         transition:0.5s all;
         div{
+            display:none;
             border:10px solid transparent;
             border-left-color:rgba(255,255,255,0);
             position:absolute;

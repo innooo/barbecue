@@ -14,7 +14,7 @@ $(document).ready(function() {
 						<span>
 							${$(data)[alreadyLoad].price}
 						</span>`;
-			$(_this).html(html).attr('goodsID',$(data)[alreadyLoad].id);
+			$(_this).html(html).attr('goodsid',$(data)[alreadyLoad].id);
 			alreadyLoad++;
 		}
 	}
@@ -84,8 +84,8 @@ $(document).ready(function() {
 	//为每一个商品添加点击事件,跳转到对应详情页 ------开始
 	$('.product-list-wrap figure').click(function(e) {
 		//写入cookie
-		var goodsID = $(this).attr('goodsID');
-		setCookie('goodsID',goodsID,7,'/');
+		var goodsid = $(this).attr('goodsid');
+		setCookie('goodsid',goodsid,7,'/');
 		window.location.href = '../html/detail_page.html';
 	});
 	//为每一个商品添加点击事件,跳转到对应详情页 ------结束
