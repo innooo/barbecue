@@ -1,24 +1,24 @@
 $(document).ready(function() {
 	//banner百叶窗轮播----开始
 	var count = 0;
-	var imgH = -40;
-	$('.banner').click(function() {
-		count++;
+	var imgH = 40;
+	$('.banner-btn span').eq(0).click(function() {
+		count--;
 		move();
 	});
-	$('#btn').click(function() {
-		count--;
+	$('.banner-btn span').eq(1).click(function() {
+		count++;
 		move();
 	});
 
 	function move() {
 		if(count > 3) {
 			count = 1;
-			$('.banner .move').css('top', '0');
+			$('.banner .move').css('top', '-120px');
 		}
 		if(count < 0) {
 			count = 2;
-			$('.banner .move').css('top', '-120px');
+			$('.banner .move').css('top', '0');
 		}
 		
 		if(count == 3) {
@@ -27,13 +27,13 @@ $(document).ready(function() {
 			$('.banner .banner-index li').eq(count).addClass('now').siblings().removeClass('now');
 		}
 
-		var iT = imgH * count + 'px';
+		var iT = imgH * count -120 + 'px';
 		$('.banner .move').stop().animate({
 			top: iT
 		}, 700);
 	}
 	var timer = setInterval(function() {
-		count--;
+		count++;
 		move();
 	}, 5000);
 	$('.banner').hover(function() {
@@ -47,11 +47,9 @@ $(document).ready(function() {
 			move();
 		}, 5000);
 	});
-	$('.banner .banner-index li').click(function() {
+	$('.banner-index li').click(function() {
 		var index = $(this).index();
 		count = index;
-		console.log(count);
-		count++;
 		move();
 	});
 	//banner百叶窗轮播----结束

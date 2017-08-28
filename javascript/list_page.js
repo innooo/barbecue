@@ -86,7 +86,33 @@ $(document).ready(function() {
 		//写入cookie
 		var goodsid = $(this).attr('goodsid');
 		setCookie('goodsid',goodsid,7,'/');
+		var historyCookie = getCookie('thisHis');
+		
+		if(historyCookie){
+			historyCookie = JSON.parse(historyCookie);
+			var isInCookie = true;
+			historyCookie.forEach(function(v,k,arr){
+				if(v == goodsid){
+					isInCookie = true;
+					arr.splice(k,1);
+					arr.unshift(goodsid);
+					return false;
+				}else{
+					isInCookie = false;
+				}
+			});
+			if(!isInCookie){
+				historyCookie.unshift(goodsid);
+			}
+			//只留4条history
+			historyCookie.splice(4);
+			setCookie('thisHis',JSON.stringify(historyCookie),7,'/');
+		}else{
+			setCookie('thisHis','["' + goodsid + '"]',7,'/');
+		}
 		window.location.href = '../html/detail_page.html';
 	});
 	//为每一个商品添加点击事件,跳转到对应详情页 ------结束
+	
+	
 });

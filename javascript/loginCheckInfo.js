@@ -272,7 +272,31 @@ function checkRegInfo() {
 			btn += verityArr[i];
 		}
 		if(btn === 6){
-			
+			var username = $('#phone-box').val();
+			var password = $('#psw-box').val();
+			var userInfo = getCookie('userInfo');
+			var thisUser = {"username":username,"password":password};
+			var isExist = true;
+			if(userInfo){
+				userInfo = JSON.parse(userInfo);
+				for(var i = 0;i < userInfo.length;i++){
+					if(userInfo[i].username == username){
+						isExist = true;
+						alert('用户名已存在！');
+						break;
+					}else{
+						isExist = false;
+					}
+				}
+				if(!isExist){
+					userInfo.push(thisUser);
+					setCookie('userInfo',JSON.stringify(userInfo),7,'/');
+				}
+				
+			}else{
+				setCookie('userInfo','[' + JSON.stringify(thisUser) + ']',7,'/');
+			}	
+			console.log(getCookie('userInfo'));
 		}
 	});
 }

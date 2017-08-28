@@ -16,39 +16,59 @@ $(document).ready(function(){
 		var id = getCookie('goodsid');
 		$('.product-snapshot').attr('goodsid',id);
 		for(var i = 0;i < $(data).length;i++){
-			if($(data)[i].id == id){
-				data = $(data)[i];
+
+			//历史记录显示
+			var historyCookie = getCookie('thisHis');
+			if(historyCookie){
+				historyCookie = JSON.parse(historyCookie);
+				console.log(historyCookie);
+				for(var j = 0;j < historyCookie.length;j++){
+					if($(data)[i].id == historyCookie[j]){
+						var historyHTML = `
+						<li>
+							<a href='#'>
+								<img src='${$(data)[i].mid1ImgURL}'  />
+							</a>
+							<p>${$(data)[i].tit}</p>
+							<span>${$(data)[i].price}</span>
+						</li>`;
+						$('.product-history ul').append($(historyHTML));
+					}
+				}
 			}
+			if($(data)[i].id == id){
+				oData = $(data)[i];
+			}	
 		}
-			
+		
 		var bigImgHTML = `<div class='snapshot-bigimg'>
 							 <ul class='clear'>
-								 <li><img src="${data.big1ImgURL}" alt="" /></li>
-								 <li><img src="${data.big2ImgURL}" alt="" /></li>
-								 <li><img src="${data.big3ImgURL}" alt="" /></li>
+								 <li><img src="${oData.big1ImgURL}" alt="" /></li>
+								 <li><img src="${oData.big2ImgURL}" alt="" /></li>
+								 <li><img src="${oData.big3ImgURL}" alt="" /></li>
 						 	 </ul>
 						  </div>`;
 		var midImgHTML = `<div class='snapshot-midimg'>
 							 <ul class='clear'>
-								 <li><img src="${data.mid1ImgURL}" alt="" /></li>
-								 <li><img src="${data.mid2ImgURL}" alt="" /></li>
-								 <li><img src="${data.mid3ImgURL}" alt="" /></li>
+								 <li><img src="${oData.mid1ImgURL}" alt="" /></li>
+								 <li><img src="${oData.mid2ImgURL}" alt="" /></li>
+								 <li><img src="${oData.mid3ImgURL}" alt="" /></li>
 						     </ul>
 						  	 <div id='cover'></div>
 						  </div>`;
 		var minImgHTML = `<ul class='clear'>
-							 <li><img src="${data.min1ImgURL}" alt="" /></li>
-							 <li><img src="${data.min2ImgURL}" alt="" /></li>
-							 <li><img src="${data.min3ImgURL}" alt="" /></li>
+							 <li><img src="${oData.min1ImgURL}" alt="" /></li>
+							 <li><img src="${oData.min2ImgURL}" alt="" /></li>
+							 <li><img src="${oData.min3ImgURL}" alt="" /></li>
 						  </ul>
 						  `;
-		var buyingInstructionHTML = `<h3>${data.tit} </h3>
-									 <h4>${data.label}</h4>
-									 <span>商品编号：${data.serial}</span>
-									 <em>${data.price}</em>`;
+		var buyingInstructionHTML = `<h3>${oData.tit} </h3>
+									 <h4>${oData.label}</h4>
+									 <span>商品编号：${oData.serial}</span>
+									 <em>${oData.price}</em>`;
 		var infoHTML = '';
-		for(var j = 0;j < data.details.length;j++){
-			infoHTML += "<img src='" + data.details[j] + "' />";
+		for(var j = 0;j < oData.details.length;j++){
+			infoHTML += "<img src='" + oData.details[j] + "' />";
 		}
 		$('.snapshot-show').html(bigImgHTML + midImgHTML);
 		$('.snapshot-minimg').html(minImgHTML);
@@ -66,12 +86,16 @@ $(document).ready(function(){
 		//鼠标滑进中图出现遮罩,滑出遮罩消失
 		function moveCover(e){
 			var evt = e || window.event;
-			var iL =evt.clientX - $('.snapshot-midimg')[0].offsetLeft - 
-					$('.snapshot-img')[0].offsetLeft -
-					$('#cover')[0].offsetWidth / 2;
-			var iT =evt.clientY - $('.snapshot-midimg')[0].offsetTop - 
-					$('.snapshot-img')[0].offsetTop -
-					$('#cover')[0].offsetHeight / 2;
+			var iScrollL = document.documentElement.scrollLeft ? 
+						   document.documentElement.scrollLeft : document.body.scrollLeft;
+			var iScrollT = document.documentElement.scrollTop ? 
+						   document.documentElement.scrollTop : document.body.scrollTop;
+			var iL = evt.clientX + iScrollL - $('.snapshot-midimg')[0].offsetLeft - 
+					 $('.snapshot-img')[0].offsetLeft -
+					 $('#cover')[0].offsetWidth / 2;
+			var iT = evt.clientY + iScrollT - $('.snapshot-midimg')[0].offsetTop - 
+					 $('.snapshot-img')[0].offsetTop -
+					 $('#cover')[0].offsetHeight / 2;
 			if(iL < 70){
 				iL = 70;
 			}
@@ -101,6 +125,8 @@ $(document).ready(function(){
 			});
 		});
 	}
+	
+	
 	//评论选项卡划过效果
 	$('.product-detail-tit li').mouseenter(function(){
 		var index = $(this).index();
@@ -129,7 +155,7 @@ $(document).ready(function(){
 	//添加加入购物车功能
 	$('#addInCart').click(function(){
 		var amount = Number($('#amount').html());
-		console.log(amount);
+
 		var cart = getCookie('cart');
 		var goodInfo;
 		var isTheGoodIn = true;
@@ -154,6 +180,17 @@ $(document).ready(function(){
 			goodInfo = `[{"id":"${$('.product-snapshot').attr('goodsid')}","count":${amount}}]`;
 			setCookie('cart',goodInfo,7,'/');
 		}
-		window.location.href = '../html/cart.html';
+//		window.location.href = '../html/cart.html';
+		$(this).clone(false,false).appendTo($('#buying-btn'))
+		.css({'position':'absolute','left':'10px','top':'-10px'})
+		.stop().animate({'left':'380px','top':'-237px','width':'5px','height':'5px'},function(){
+			$(this).hide();
+			cartGoodsCount();
+		});
+	});
+	//实现添加评论功能
+	$('#com-submit').click(function(){
+		var value = $(this).siblings('textarea').val();
+		var html = ``;
 	});
 });

@@ -177,7 +177,8 @@ $(document).ready(function(){
 		getTotalGoods();
 		cartGoodsCount();
 	});
-	function addCookieInfo(){
-		
-	}
+	//立即结算跳转
+	$('#sum').click(function(){
+		window.location.href = 'pay.html';
+	});
 });

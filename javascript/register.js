@@ -80,7 +80,7 @@ $(document).ready(function(){
 		});
 	}*/
 	
-	$('.form-box').on('click','#reg-btn',function(){
+	/*$('.form-box').on('click','#reg-btn',function(){
 		if($('#agree').is(':checked')){
 			var phone = $('#phone-box').val();
 			var code  = $('#code-box').val();
@@ -100,5 +100,5 @@ $(document).ready(function(){
 				global:true
 			});
 		}
-	});
+	});*/
 });

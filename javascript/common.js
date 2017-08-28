@@ -27,6 +27,23 @@ $(document).ready(function() {
 		window.location.href = '../html/register.html';
 	})
 	cartGoodsCount();
+	//左侧边栏鼠标划过出现二级菜单
+	$('nav li').eq(1).hover(function(e){
+		e.stopPropagation();
+		$('.hidenav').show(300);
+	},function(e){
+		e.stopPropagation();
+		$('.hidenav').hide(300);
+	});
+	$('.sidebar a').eq(1).hover(function(){
+		$('.sidebar-panel').show().stop().animate({'left':'-245px','opacity':'1'})
+		.find('div').show();
+		
+	},function(){
+		$('.sidebar-panel').stop().animate({'left':'-350px','opacity':'0'},function(){
+			$(this).hide();
+		});
+	});
 });
 
 
