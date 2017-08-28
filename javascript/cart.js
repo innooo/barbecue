@@ -12,43 +12,48 @@ $(document).ready(function(){
 		global:true
 	});
 	function selectGoods(data){
-		var cartInfo = JSON.parse(getCookie('cart'));
-		for(var i = 0;i < cartInfo.length;i++){
-			for(var j = 0;j < $(data).length;j++){
-				if(cartInfo[i].id == $(data)[j].id){
-					var price = $(data)[j].price.slice(1);
-					var tbodyHTML = `<tr goodsid='${$(data)[j].id}'>
-							<td>
-								<input type="checkbox" class='selectThis' checked=checked />
-							</td>
-							<td>
-								<dl class='clear'>
-									<dt class='flt'>
-										<img src='${$(data)[j].min1ImgURL}'  />
-									</dt>
-									<dd class='flt'>
-										<p>${$(data)[j].tit}*2</p>
-										<em>商品编号:${$(data)[j].serial}</em>
-									</dd>
-								</dl>
-							</td>
-							<td class='thisPrice'>${$(data)[j].price}</td>
-							<td>
-								<div class='count'>
-									<input type="button" class='minus' value='-' />
-									<span class='amount'>${cartInfo[i].count}</span>
-									<input type="button" class='add' value='+' />
-								</div>
-							</td>
-							<td class='totalThis'>${'￥' + cartInfo[i].count * price}</td>
-							<td><a href='#' class='deleteItem'>&times;删除</a></td>
-						</tr>`;
-					$('.buying-list tbody').append(tbodyHTML);
-					getTotalGoods();
-					break;
+		var cartInfo;
+		if(getCookie('cart')){
+			cartInfo = JSON.parse(getCookie('cart'));
+			console.log(cartInfo);
+			for(var i = 0;i < cartInfo.length;i++){
+				for(var j = 0;j < $(data).length;j++){
+					if(cartInfo[i].id == $(data)[j].id && cartInfo[i].count != 0){
+						var price = $(data)[j].price.slice(1);
+						var tbodyHTML = `<tr goodsid='${$(data)[j].id}'>
+								<td>
+									<input type="checkbox" class='selectThis' checked=checked />
+								</td>
+								<td>
+									<dl class='clear'>
+										<dt class='flt'>
+											<img src='${$(data)[j].min1ImgURL}'  />
+										</dt>
+										<dd class='flt'>
+											<p>${$(data)[j].tit}*2</p>
+											<em>商品编号:${$(data)[j].serial}</em>
+										</dd>
+									</dl>
+								</td>
+								<td class='thisPrice'>${$(data)[j].price}</td>
+								<td>
+									<div class='count'>
+										<input type="button" class='minus' value='-' />
+										<span class='amount'>${cartInfo[i].count}</span>
+										<input type="button" class='add' value='+' />
+									</div>
+								</td>
+								<td class='totalThis'>${'￥' + cartInfo[i].count * price}</td>
+								<td><a href='#' class='deleteItem'>&times;删除</a></td>
+							</tr>`;
+						$('.buying-list tbody').append(tbodyHTML);
+						getTotalGoods();
+						break;
+					}
 				}
 			}
 		}
+		
 	}
 	//添加删除购物信息事件
 	$('.buying-list').on('click','.deleteItem',function(){
@@ -65,6 +70,7 @@ $(document).ready(function(){
 		
 		$(this).parents('tr').remove();
 		getTotalGoods();
+		cartGoodsCount();
 	})
 	//添加全选按钮功能
 	$('.content').on('click','.selectAll',function(){
@@ -108,6 +114,7 @@ $(document).ready(function(){
 		totalPrice = totalPrice * $(this).siblings('.amount').html();
 		$(this).parents('td').siblings('.totalThis').html('￥' + totalPrice);
 		getTotalGoods();
+		cartGoodsCount();
 	});
 	$('.buying-list').on('click','.minus',function(){
 		var html = Number($(this).siblings('.amount').html());
@@ -121,9 +128,9 @@ $(document).ready(function(){
 			for(var i = 0;i < cookie.length;i++){
 				if(cookie[i].id == id){
 					cookie[i].count--;
-					if(cookie[i].count <= 0){
+					/*if(cookie[i].count <= 0){
 						cookie.splice(i,1);
-					}
+					}*/
 					break;
 				}
 			}
@@ -134,6 +141,7 @@ $(document).ready(function(){
 		totalPrice = totalPrice * $(this).siblings('.amount').html();
 		$(this).parents('td').siblings('.totalThis').html('￥' + totalPrice);
 		getTotalGoods();
+		cartGoodsCount();
 	});
 	//封装计算现在购物车商品数量和总价的函数
 	function getTotalGoods(){
@@ -167,6 +175,7 @@ $(document).ready(function(){
 		});
 		setCookie('cart',JSON.stringify(cookie),7,'/');
 		getTotalGoods();
+		cartGoodsCount();
 	});
 	function addCookieInfo(){
 		

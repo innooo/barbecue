@@ -26,11 +26,9 @@ $(document).ready(function() {
 	$('#search-btn~a').eq(1).click(function(){
 		window.location.href = '../html/register.html';
 	})
-	//logo 按钮
-	$('#header-logo').click(function(){
-		window.location.href = '../index.html';
-	});
+	cartGoodsCount();
 });
+
 
 function getCookie(name){
 	var cookie = document.cookie;
@@ -42,11 +40,31 @@ function getCookie(name){
 		}
 	}
 }
-function setCookie(name,value,day,path){
-	var date = new Date();
-	date = date.setDate(date.getDate() + day);
-	document.cookie = `${name}=${encodeURIComponent(value)};expires=${date};path=${path}`;
+function setCookie
+(name/*cookie名称*/,value/*cookie值*/,day/*cookie失效期限*/,path/*cookie作用路径*/)
+{
+    //获取当前日期用于后面cookie的过期时间
+    var oDate = new Date();
+    oDate.setDate(oDate.getDate() + day);
+//  console.log(oDate);
+    document.cookie
+        = name + '=' + encodeURIComponent(value) +
+          ';expires=' + oDate +
+          ';path=' + path;
 }
+
 function removeCookie(name){
 	document.cookie = name + ';expires=-1;path=/';
+}
+function cartGoodsCount(){
+	//购物车图标显示购物车商品数量
+	var cookie = getCookie('cart');
+	var goodsCount = 0;
+	if(cookie){
+		cookie = JSON.parse(cookie);
+		for(var i = 0;i < cookie.length;i++){
+			goodsCount += cookie[i].count;
+		}
+		$('#cart em').html(goodsCount);
+	}
 }
