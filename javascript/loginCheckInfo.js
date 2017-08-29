@@ -1,10 +1,40 @@
 function checkLoginInfo() {
 	var verityArr = [];
-	//verigy phone
+	//check function
+	function check(option){
+		var userInfo = getCookie('userInfo');
+		if(option == 'username'){
+			data = $('#phone-box').val();
+		}else if(option == 'password'){
+			data = $('#psw-box').val();
+		}else{
+			return;
+		}
+		if(userInfo){
+			userInfo = JSON.parse(userInfo);
+			var isExist = true;
+			for(var i = 0;i < userInfo.length;i++){
+				if(userInfo[i][option] == data){
+					isExist = true;
+					return 1;
+				}else{
+					isExist = false;
+				}
+			}
+			if(!isExist){
+				return 0;
+			}
+		}else{
+			return 0;
+		}
+	}
+	//verigy phon
 	$('.form-box #phone-box').blur(function(e) {
 		var pattern = /^1[358]\d{8}\d$/;
+		var checkResult;
+		var　username = $(this).val();
 		if($(this).val() == '') {
-			$(this).next().css('display', 'block').html('*手机号码不能为空');
+			$(this).next().css('display', 'block').html('*用户名不能为空！');
 			verityArr[0] = 0;
 			$(this).parent().removeClass('correct');
 		} else if(!(pattern.test($(this).val()))) {
@@ -12,10 +42,18 @@ function checkLoginInfo() {
 			verityArr[0] = 0;
 			$(this).parent().removeClass('correct');
 		} else {
-			$(this).parent().addClass('correct');
-			verityArr[0] = 1;
+			checkResult = check('username');
+			if(checkResult == 1){
+				$(this).parent().addClass('correct');
+				verityArr[0] = 1;
+			}else{
+				$(this).next().css('display', 'block').html('*用户名不存在！');
+				verityArr[0] = 0;
+				$(this).parent().removeClass('correct');
+			}	
 		}
 	});
+	//用户名框重新获得焦点，移出提示信息
 	$('.form-box #phone-box').focus(function(e) {
 		$(this).next().css('display', 'none');
 	});
@@ -70,54 +108,52 @@ function checkLoginInfo() {
 
 	//verify psw
 	$('.form-box #psw-box').blur(function(e) {
-		var username = $('#phone-box').val();
-		var password = $('#psw-box').val();
-		$.ajax({
-			type:'GET',
-			url:'../../dist/php/register.php',
-			timeout:10000,
-			beforeSend:function(){},
-			data:{"username":username,"password":password},
-			dataType:'text',
-			success:function(data){result(data)},
-			error:function(){console.log('error')},
-			complete:function(){},
-			global:true
-		});
-		function result(data){
-			if(data == 0){
-				console.log(1);
-				$('#psw-box').next().css('display', 'block').html('*密码错误');
-				verityArr[2] = 0;
-				$('#psw-box').parent().removeClass('correct');
-			}else{
-				$('#psw-box').parent().addClass('correct');
-				verityArr[2] = 1;
-			}
+//		var username = $('#phone-box').val();
+//		var password = $('#psw-box').val();
+		
+//		$.ajax({
+//			type:'GET',
+//			url:'../../dist/php/register.php',
+//			timeout:10000,
+//			beforeSend:function(){},
+//			data:{"username":username,"password":password},
+//			dataType:'text',
+//			success:function(data){result(data)},
+//			error:function(){console.log('error')},
+//			complete:function(){},
+//			global:true
+//		});
+	
+		var checkResult = check('password');
+		if(checkResult == 0){
+			$(this).next().css('display', 'block').html('*密码错误');
+			verityArr[2] = 0;
+			$(this).parent().removeClass('correct');
+		}else{
+			$(this).parent().addClass('correct');
+			verityArr[2] = 1;
 		}
 	});
 	$('.form-box #psw-box').focus(function(e) {
 		$(this).next().css('display', 'none');
 	});
 	//end
-
+	
 	$('#login-btn').click(function() {
 		var btn = 0;
-		//verify checkbox is checked
-		if(!$('#agree').is(':checked')) {
-			$('#agree').next().css('display', 'block').html('需要阅读用户协议吗?');
-			verityArr[3] = 0;
-			$(this).parent().removeClass('correct');
-		} else {
-			$('#agree').next().css('display', 'none');
-			verityArr[3] = 1;
-		}
-
 		for(var i = 0; i < verityArr.length; i++) {
 			btn += verityArr[i];
 		}
-		if(btn === 4){
+		if(btn === 3){
+			//verify if the checkbox is checked
+			if($('#agree').is(':checked')){
+				setCookie('isLogin',1,7,'/');
+			}else{
+				setCookie('isLogin',1,0,'/');
+			}
 			window.location.href="../index.html"; 
+		}else{
+			alert('请检查用户名或密码！')
 		}
 	});
 }
@@ -277,11 +313,13 @@ function checkRegInfo() {
 			var userInfo = getCookie('userInfo');
 			var thisUser = {"username":username,"password":password};
 			var isExist = true;
+			var isSuccess = true;
 			if(userInfo){
 				userInfo = JSON.parse(userInfo);
 				for(var i = 0;i < userInfo.length;i++){
 					if(userInfo[i].username == username){
 						isExist = true;
+						isSuccess = false;
 						alert('用户名已存在！');
 						break;
 					}else{
@@ -289,14 +327,23 @@ function checkRegInfo() {
 					}
 				}
 				if(!isExist){
-					userInfo.push(thisUser);
+					isSuccess = true;
+					userInfo.unshift(thisUser);
 					setCookie('userInfo',JSON.stringify(userInfo),7,'/');
-				}
-				
+				}	
 			}else{
 				setCookie('userInfo','[' + JSON.stringify(thisUser) + ']',7,'/');
+				isSuccess = true;
 			}	
-			console.log(getCookie('userInfo'));
+			if(isSuccess){
+				$('.popup-wrap').show().find('.popup-box').prepend($('<p>注册成功是否登录?</p>'))
+				.find('#confirm').click(function(){
+					window.location.href = '../index.html?username=' + username;
+				}).siblings('#cancel').click(function(){
+					$('.popup-wrap').hide();
+				});
+			}
+			
 		}
 	});
 }

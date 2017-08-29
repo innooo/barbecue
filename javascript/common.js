@@ -1,4 +1,26 @@
-$(document).ready(function() {
+$(document).ready(function(){
+	//通过cookie查看是否登录
+	hasLogin();
+	//添加搜索按钮功能
+	$('#search-btn').attr('show','0');
+	$('#search-btn').click(function(){
+		if($(this).attr('show') == 0){
+			console.log(1);
+			$('#top-search').show().stop().animate({'height':'80px'},function(){
+				$('.search-wrap').stop().animate({'opacity':1},200,function(){
+					$('#search-btn').attr('show',1);
+				});
+			});
+		}else{
+			console.log(-1);
+			$('.search-wrap').stop().animate({'opacity':0},200,function(){
+				$('#top-search').stop().animate({'height':0},function(){
+					$(this).hide();
+					$('#search-btn').attr('show',0);
+				});
+			});
+		}
+	});
 	//****页面滚动 显示 / 隐藏 回到顶端按钮 ----开始 ******
 	$(document).scroll(function() {
 		var iScrollT = document.documentElement.scrollTop ||
@@ -15,6 +37,12 @@ $(document).ready(function() {
 		}
 	});
 	//****页面滚动 显示 / 隐藏 回到顶端按钮 ----结束 ******
+	//顶端搜索栏的显示和隐藏功能
+	
+	//回到顶端按钮功能
+	$('.sidebar input').click(function(){
+		document.documentElement.scrollTop = document.body.scrollTop = 0;	
+	});
 	//购物车按钮
 	$('#cart').click(function(){
 		window.location.href = '../html/cart.html';
@@ -84,4 +112,40 @@ function cartGoodsCount(){
 		}
 		$('#cart em').html(goodsCount);
 	}
+}
+function hasLogin(){
+	var isLogin = getCookie('isLogin');
+	var url = window.location.search;
+	if(url){
+		var username = url.slice(url.indexOf('?') + 1);
+		username = username.split('&');
+		for(var i = 0;i < username.length;i++){
+			var temp = username[i].split('=');
+			if(temp[0]){
+				isLogin = 1;
+			}
+		}
+	}
+	if(isLogin == 1){
+//		console.log('login');
+		var headHTML = `
+				<input type="button" id='search-btn' />|
+				<a href="#" id='quit'>退出</a>|
+				<a href="#" id='myAccount'>我的账户</a>|
+				<a href="html/cart.html" id='cart'>
+					<em>0</em>
+				</a>`;
+		$('.header-links').html(headHTML);
+		$('#quit')[0].onclick = function(){
+			setCookie('isLogin',0,7,'/');
+			var headHTML = `<input type="button" id='search-btn' />|
+				<a href="html/login.html">登录</a>|
+				<a href="html/register.html">注册</a>|
+				<a href="html/login.html">我的账户</a>|
+				<a href="html/cart.html" id='cart'>
+					<em>0</em>
+				</a>`;
+			$('.header-links').html(headHTML);
+		};
+	}	
 }

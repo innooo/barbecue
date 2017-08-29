@@ -43,7 +43,45 @@ header,.banner,section,.info,.bottom{
     width:1152px;
     margin:0 auto;
 }
-
+#top-search{
+    display:none;
+    width:100%;
+    height:0;
+    background:rgba(0,0,0,.4);
+    position:relative;
+    z-index:200;
+    overflow:hidden;
+    .search-wrap{
+        opacity:0;
+        position:absolute;
+        width:500px;
+        height:40px;
+        top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:auto;
+        input{
+            border:none;
+            outline:none;
+            height:40px;
+            font-size:16px;
+            text-indent:10px;
+            float:left;
+        }
+        input[type=text]{
+            width:400px;
+            
+        }
+        input[type=button]{
+            cursor:pointer;
+            width:100px;
+            background:#666;
+            color:#fff;
+            font-family:'幼圆';
+        }
+    }
+}
 header{
     position:relative;
     height:70px;
@@ -177,6 +215,7 @@ nav{
         height:79px;
     }
     input{
+        cursor:pointer;
         display:block;
         opacity:0;
         margin:0;
